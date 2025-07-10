@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files - exclude all data exports
+data/*.csv
+data/*.json
+*.csv
+*.json
+
+# Environment files - never commit credentials
+.env
+.env.local
+.env.production
+.env.staging
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# System files
+Thumbs.db
