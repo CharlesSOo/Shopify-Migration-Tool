@@ -47,7 +47,7 @@ Shopify-Migration-Tool/
 
 4. **Run the uploader**
    ```bash
-   python scripts/load.py
+   python scripts/shopify_order_uploader.py
    ```
    Follow the interactive prompts to run either a **test** (10 dummy orders) or a **full** upload. You can safely resume interrupted uploads – progress is tracked in `data/upload_progress.json` (git-ignored).
 

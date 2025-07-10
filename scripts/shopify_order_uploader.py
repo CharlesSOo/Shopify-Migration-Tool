@@ -346,8 +346,7 @@ def load_woocommerce_orders(test_mode=False, test_count=10):
     
     # Check both possible locations for the file
     possible_files = [
-        'data/shopify_orders_ready.json',           # Expected location
-        'scripts/data/shopify_orders_ready.json'    # Current location
+        'data/shopify_orders_ready.json'  # Expected location only
     ]
     
     orders_file = None
@@ -357,10 +356,8 @@ def load_woocommerce_orders(test_mode=False, test_count=10):
             break
     
     if not orders_file:
-        print("❌ WooCommerce orders file not found in any expected location:")
-        for path in possible_files:
-            print(f"   - {path}")
-        print("   Run: python scripts/woocommerce_order_exporter.py first")
+        print("❌ WooCommerce orders file not found in expected location: data/shopify_orders_ready.json")
+        print("   Please place your exported orders JSON at that path before running this tool.")
         return []
     
     try:
@@ -499,17 +496,14 @@ if __name__ == "__main__":
     
     # Check if we have WooCommerce order data
     possible_files = [
-        'data/shopify_orders_ready.json',
-        'scripts/data/shopify_orders_ready.json'
+        'data/shopify_orders_ready.json'  # Expected location only
     ]
     
     orders_file_exists = any(os.path.exists(f) for f in possible_files)
     if not orders_file_exists:
         print("❌ No WooCommerce order export found")
-        print("   Checked:")
-        for path in possible_files:
-            print(f"   - {path}")
-        print("   Run: python scripts/woocommerce_order_exporter.py first")
+        print("   Expected: data/shopify_orders_ready.json")
+        print("   Please export orders and place the file accordingly before running again.")
         exit(1)
     
     print("📦 Found WooCommerce orders export")
